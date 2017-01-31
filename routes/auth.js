@@ -27,16 +27,9 @@ router.get('/', (req, res, next) => {
     // state: req.query.state
   }
   console.log('this is data', data);
-  const options = {
-    method: 'POST',
-    url: 'https://slack.com/api/oauth.access',
-    headers: {
-     // { 'Accept': 'application/json'},
-      'content-type': 'application/json; charset=utf-8'
-    },
-    // contentType: 'application/json',
-    // contentType: 'application/json;charset=ISO-8859-15',
-    json: data
+  var options = {
+    method: 'GET',
+    uri: 'https://slack.com/api/oauth.access?code=' + code + '&client_id=' + process.env.SLACK_CLIENT_ID + '&client_secret=' + process.env.SLACK_CLIENT_SECRET + '&redirect_uri=' + redirect_uri
   }
   request(options, (err, response, body) => {
     // console.log(response);
