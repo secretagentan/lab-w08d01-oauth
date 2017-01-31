@@ -1,5 +1,10 @@
 <h1>Profile Page</h1>
 
 {{!-- Display User Information --}}
+<ul>
+ <li>{{user.first_name}} {{user.last_name}}</li>
+ <li>{{user.email}}</li>
+</ul>
 
 {{!-- Display a link to logout --}}
+<a href="https://slack.com/api/auth.revoke">Logout</a>
