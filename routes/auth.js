@@ -35,7 +35,7 @@ router.get('/', (req, res, next) => {
       const data = JSON.parse(body);
       req.session.access_token = data.access_token;
       // console.log(response);
-      console.log(body);
+      // console.log(body);
       // res.send(JSON.parse(body));
       res.redirect('/profile');
     }
